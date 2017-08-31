@@ -18,20 +18,20 @@ const USD_to_UAH = "USD to UAH";
 const EUR_to_USD = "EUR to USD";
 
 var eur = prompt(EUR_to_UAH, 1);
-eur = checkPromptIsEmpty(eur, EUR_to_UAH);
+eur = checkPromptIfEmpty(eur, EUR_to_UAH);
 
 var usd = prompt(USD_to_UAH, 1);
-usd = checkPromptIsEmpty(usd, USD_to_UAH);
+usd = checkPromptIfEmpty(usd, USD_to_UAH);
 
 var eur_usd = prompt(EUR_to_USD, 1);
-eur_usd = checkPromptIsEmpty(eur_usd, EUR_to_USD);
+eur_usd = checkPromptIfEmpty(eur_usd, EUR_to_USD);
 
 var eurConverted = currencyConverter(eur,EUR);
 var usdConverted = currencyConverter(usd,USD);
 var eur_usdConverted = currencyConverter(eur_usd,EUR_USD);
 
 
-function checkPromptIsEmpty(money, message){
+function checkPromptIfEmpty(money, message){
     while (money === "" || money == null) {
         money  = prompt("Oops, try again " + message, 1);
     }
