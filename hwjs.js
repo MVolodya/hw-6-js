@@ -1,7 +1,14 @@
-var person = prompt("What's your name", "Volodymyr Medvid");
+var messageName = "enter your name";
+var messageEvent = "enter your meeting";
+
+var person = prompt("What's your name?", "Volodymyr Medvid");
+person = checkPromptIfEmpty(person, messageName);
+
 var time = "Mon Sep 25 2017 12:00";
 var place = "Lviv";
+
 var personEvent = prompt("Do you have a some meeting?", "meet my friend");
+personEvent = checkPromptIfEmpty(personEvent, messageEvent);
 
 console.log(resultPerson());
 alert(resultPerson());
@@ -30,22 +37,21 @@ var eurConverted = currencyConverter(eur,EUR);
 var usdConverted = currencyConverter(usd,USD);
 var eur_usdConverted = currencyConverter(eur_usd,EUR_USD);
 
-
-function checkPromptIfEmpty(money, message){
-    while (money === "" || money == null) {
-        money  = prompt("Oops, try again " + message, 1);
-    }
-    return money;
-}
-
 function currencyConverter(money, currency){
-    return money * currency;
+    return (Math.round((money * currency)*100)/100);
 }
 
 function resultConcatenation(){
     return (eur + " euros are equal " + eurConverted + " UAH, "+
             usd + " dollars are equal " + usdConverted + " UAH, " +
             eur_usd + " euros are equal " + eur_usdConverted + " USD");
+}
+
+function checkPromptIfEmpty(enteredData, message){
+    while (enteredData === "" || enteredData == null) {
+        enteredData  = prompt("Oops, try again " + message);
+    }
+    return enteredData;
 }
 
 console.log(resultConcatenation());
