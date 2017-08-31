@@ -1,13 +1,13 @@
-var messageName = "enter your name";
-var messageEvent = "enter your meeting";
+let messageName = "enter your name";
+let messageEvent = "enter your meeting";
 
-var person = prompt("What's your name?", "Volodymyr Medvid");
+let person = prompt("What's your name?", "Volodymyr Medvid");
 person = checkPromptIfEmpty(person, messageName);
 
-var time = "Mon Sep 25 2017 12:00";
-var place = "Lviv";
+let time = "Mon Sep 25 2017 12:00";
+let place = "Lviv";
 
-var personEvent = prompt("Do you have a some meeting?", "meet my friend");
+let personEvent = prompt("Do you have a some meeting?", "with friends");
 personEvent = checkPromptIfEmpty(personEvent, messageEvent);
 
 console.log(resultPerson());
@@ -24,18 +24,18 @@ const EUR_to_UAH = "EUR to UAH";
 const USD_to_UAH = "USD to UAH";
 const EUR_to_USD = "EUR to USD";
 
-var eur = prompt(EUR_to_UAH, 1);
+let eur = prompt(EUR_to_UAH, 1);
 eur = checkPromptIfEmpty(eur, EUR_to_UAH);
 
-var usd = prompt(USD_to_UAH, 1);
+let usd = prompt(USD_to_UAH, 1);
 usd = checkPromptIfEmpty(usd, USD_to_UAH);
 
-var eur_usd = prompt(EUR_to_USD, 1);
+let eur_usd = prompt(EUR_to_USD, 1);
 eur_usd = checkPromptIfEmpty(eur_usd, EUR_to_USD);
 
-var eurConverted = currencyConverter(eur,EUR);
-var usdConverted = currencyConverter(usd,USD);
-var eur_usdConverted = currencyConverter(eur_usd,EUR_USD);
+let eurConverted = currencyConverter(eur,EUR);
+let usdConverted = currencyConverter(usd,USD);
+let eur_usdConverted = currencyConverter(eur_usd,EUR_USD);
 
 function currencyConverter(money, currency){
     return (Math.round((money * currency)*100)/100);
