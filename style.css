@@ -1,4 +1,29 @@
-h1 {
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+.bg {
+    background-image: url("img/bg1.jpg");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.text {
+    position: absolute;
+    left: 0;
+    top: 10%;
+    width: 100%;
     text-align: center;
-    padding-top: 100px;
+    color: #000;
+}
+.welcome {
+    font-family: 'Encode Sans', sans-serif;
+        color: #000;
+
+        font-size: 20px;
+        letter-spacing: 1px;
+        line-height: 30px;
 }
