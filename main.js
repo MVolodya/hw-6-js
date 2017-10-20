@@ -25,13 +25,13 @@ const USD_to_UAH = "USD to UAH";
 const EUR_to_USD = "EUR to USD";
 
 let eur = prompt(EUR_to_UAH, 1);
-eur = checkPromptIfEmpty(eur, EUR_to_UAH);
+eur = isNumber(eur, EUR_to_UAH);
 
 let usd = prompt(USD_to_UAH, 1);
-usd = checkPromptIfEmpty(usd, USD_to_UAH);
+usd = isNumber(usd, USD_to_UAH);
 
 let eur_usd = prompt(EUR_to_USD, 1);
-eur_usd = checkPromptIfEmpty(eur_usd, EUR_to_USD);
+eur_usd = isNumber(eur_usd, EUR_to_USD);
 
 let eurConverted = currencyConverter(eur,EUR);
 let usdConverted = currencyConverter(usd,USD);
@@ -52,6 +52,13 @@ function checkPromptIfEmpty(enteredData, message){
         enteredData  = prompt("Oops, try again " + message);
     }
     return enteredData;
+}
+
+function isNumber(value, message) {
+    while (isNaN(value)) {
+        value  = prompt("Oops, try again " + message);
+    }
+    return value;
 }
 
 console.log(resultConcatenation());
